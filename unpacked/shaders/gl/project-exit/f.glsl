@@ -1,0 +1,2 @@
+#version 300 es
+precision highp float;uniform sampler2D tex;uniform vec4 viewport;uniform vec2 clip;in vec2 source;in float screenY;out vec4 color;void main(){if(screenY<clip.x||screenY>=clip.y)discard;vec2 uv=vec2(source.x,1.-viewport.z-source.y*viewport.w);vec4 ink=texture(tex,uv);color=vec4(ink.rgb/max(ink.a,.00001),ink.a);}

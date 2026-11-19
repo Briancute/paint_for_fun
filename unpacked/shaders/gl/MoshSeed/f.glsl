@@ -1,0 +1,2 @@
+#version 300 es
+precision highp float;uniform sampler2D tex;uniform vec2 cover;uniform float zoom;in vec2 vUv;out vec4 color;void main(){vec2 t=(vec2(vUv.x,1.-vUv.y)-.5)/(cover*zoom)+.5;color=vec4(texture(tex,clamp(t,0.,1.)).rgb,1.);}

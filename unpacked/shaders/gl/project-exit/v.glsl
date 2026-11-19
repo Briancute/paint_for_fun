@@ -1,0 +1,2 @@
+#version 300 es
+precision highp float;uniform vec4 viewport;uniform vec4 region;uniform vec2 shift;uniform vec3 bend;uniform float axis;in vec2 pos;in vec2 uv;out vec2 source;out float screenY;void main(){source=mix(region.xy,region.zw,vec2(uv.x,1.-uv.y));vec2 point=mix(region.xy,region.zw,vec2(pos.x,-pos.y)*.5+.5)-shift;float across=clamp((mix(source.y,source.x,axis)-bend.x)/max(bend.y,.00001),0.,1.);point+=vec2(axis-1.,axis)*bend.z*max(0.,sin(across*3.14159265));screenY=point.y;gl_Position=vec4(point.x*2.-1.,1.-2.*(viewport.x+point.y*viewport.y),0.,1.);}

@@ -1,0 +1,11 @@
+{
+  "name": "surya-aditya-clone",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Complete 1:1 local clone and unpacked source of https://surya-aditya.com/",
+  "scripts": {
+    "start": "node server.mjs",
+    "sync": "node scripts/clone-and-unpack.mjs"
+  }
+}

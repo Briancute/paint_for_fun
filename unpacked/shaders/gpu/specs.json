@@ -1,0 +1,2350 @@
+[
+  {
+    "name": "image",
+    "attributes": [
+      {
+        "name": "pos",
+        "location": 0,
+        "size": 2
+      },
+      {
+        "name": "uv",
+        "location": 1,
+        "size": 2
+      }
+    ],
+    "uniforms": [
+      {
+        "name": "proj",
+        "type": "mat4",
+        "offset": 0,
+        "size": 64
+      },
+      {
+        "name": "view",
+        "type": "mat4",
+        "offset": 64,
+        "size": 64
+      },
+      {
+        "name": "model",
+        "type": "mat4",
+        "offset": 128,
+        "size": 64
+      },
+      {
+        "name": "z",
+        "type": "float",
+        "offset": 192,
+        "size": 4
+      },
+      {
+        "name": "sphere",
+        "type": "vec2",
+        "offset": 200,
+        "size": 8
+      },
+      {
+        "name": "cover",
+        "type": "vec2",
+        "offset": 208,
+        "size": 8
+      },
+      {
+        "name": "win",
+        "type": "vec2",
+        "offset": 216,
+        "size": 8
+      },
+      {
+        "name": "prlx",
+        "type": "vec2",
+        "offset": 224,
+        "size": 8
+      },
+      {
+        "name": "inkPad",
+        "type": "vec2",
+        "offset": 232,
+        "size": 8
+      },
+      {
+        "name": "inkBend",
+        "type": "vec2",
+        "offset": 240,
+        "size": 8
+      },
+      {
+        "name": "inkViewport",
+        "type": "vec2",
+        "offset": 248,
+        "size": 8
+      },
+      {
+        "name": "inkFrame",
+        "type": "vec4",
+        "offset": 256,
+        "size": 16
+      },
+      {
+        "name": "inkActive",
+        "type": "float",
+        "offset": 272,
+        "size": 4
+      },
+      {
+        "name": "o",
+        "type": "float",
+        "offset": 276,
+        "size": 4
+      },
+      {
+        "name": "bw",
+        "type": "float",
+        "offset": 280,
+        "size": 4
+      },
+      {
+        "name": "lumi",
+        "type": "float",
+        "offset": 284,
+        "size": 4
+      },
+      {
+        "name": "maskX",
+        "type": "vec2",
+        "offset": 288,
+        "size": 8
+      },
+      {
+        "name": "maskY",
+        "type": "vec2",
+        "offset": 296,
+        "size": 8
+      },
+      {
+        "name": "ar",
+        "type": "float",
+        "offset": 304,
+        "size": 4
+      },
+      {
+        "name": "gn",
+        "type": "float",
+        "offset": 308,
+        "size": 4
+      },
+      {
+        "name": "gnWhite",
+        "type": "float",
+        "offset": 312,
+        "size": 4
+      },
+      {
+        "name": "gnS",
+        "type": "float",
+        "offset": 316,
+        "size": 4
+      },
+      {
+        "name": "gnCells",
+        "type": "float",
+        "offset": 320,
+        "size": 4
+      },
+      {
+        "name": "texA",
+        "type": "float",
+        "offset": 324,
+        "size": 4
+      },
+      {
+        "name": "difference",
+        "type": "float",
+        "offset": 328,
+        "size": 4
+      },
+      {
+        "name": "markProgress",
+        "type": "vec3",
+        "offset": 336,
+        "size": 12
+      },
+      {
+        "name": "markColor",
+        "type": "vec3",
+        "offset": 352,
+        "size": 12
+      },
+      {
+        "name": "soft",
+        "type": "float",
+        "offset": 364,
+        "size": 4
+      },
+      {
+        "name": "softG",
+        "type": "float",
+        "offset": 368,
+        "size": 4
+      },
+      {
+        "name": "inkScroll",
+        "type": "float",
+        "offset": 372,
+        "size": 4
+      },
+      {
+        "name": "inkAura",
+        "type": "float",
+        "offset": 376,
+        "size": 4
+      },
+      {
+        "name": "inkReveal",
+        "type": "float",
+        "offset": 380,
+        "size": 4
+      },
+      {
+        "name": "inkSize",
+        "type": "vec2",
+        "offset": 384,
+        "size": 8
+      },
+      {
+        "name": "gpuFlip_inkField",
+        "type": "float",
+        "offset": 392,
+        "size": 4
+      },
+      {
+        "name": "gpuFlip_tex",
+        "type": "float",
+        "offset": 396,
+        "size": 4
+      },
+      {
+        "name": "gpuFlip_markTex",
+        "type": "float",
+        "offset": 400,
+        "size": 4
+      },
+      {
+        "name": "gpuTargetHeight",
+        "type": "float",
+        "offset": 404,
+        "size": 4
+      }
+    ],
+    "textures": [
+      {
+        "name": "inkField",
+        "binding": 0,
+        "flipOffset": 392
+      },
+      {
+        "name": "tex",
+        "binding": 2,
+        "flipOffset": 396
+      },
+      {
+        "name": "markTex",
+        "binding": 4,
+        "flipOffset": 400
+      }
+    ],
+    "uniformSize": 416,
+    "heightOffset": 404,
+    "vertex": "@shader/Image/v.glsl",
+    "fragment": "@shader/Image/f.glsl"
+  },
+  {
+    "name": "portraitFocus",
+    "attributes": [
+      {
+        "name": "pos",
+        "location": 0,
+        "size": 2
+      },
+      {
+        "name": "uv",
+        "location": 1,
+        "size": 2
+      }
+    ],
+    "uniforms": [
+      {
+        "name": "focus",
+        "type": "vec2",
+        "offset": 0,
+        "size": 8
+      },
+      {
+        "name": "gpuFlip_tex",
+        "type": "float",
+        "offset": 8,
+        "size": 4
+      },
+      {
+        "name": "gpuTargetHeight",
+        "type": "float",
+        "offset": 12,
+        "size": 4
+      }
+    ],
+    "textures": [
+      {
+        "name": "tex",
+        "binding": 0,
+        "flipOffset": 8
+      }
+    ],
+    "uniformSize": 16,
+    "heightOffset": 12,
+    "vertex": "@shader/Mosh/v.glsl",
+    "fragment": "@shader/portrait-focus/f.glsl"
+  },
+  {
+    "name": "parallax",
+    "attributes": [
+      {
+        "name": "pos",
+        "location": 0,
+        "size": 2
+      },
+      {
+        "name": "uv",
+        "location": 1,
+        "size": 2
+      }
+    ],
+    "uniforms": [
+      {
+        "name": "proj",
+        "type": "mat4",
+        "offset": 0,
+        "size": 64
+      },
+      {
+        "name": "view",
+        "type": "mat4",
+        "offset": 64,
+        "size": 64
+      },
+      {
+        "name": "model",
+        "type": "mat4",
+        "offset": 128,
+        "size": 64
+      },
+      {
+        "name": "z",
+        "type": "float",
+        "offset": 192,
+        "size": 4
+      },
+      {
+        "name": "cover",
+        "type": "vec2",
+        "offset": 200,
+        "size": 8
+      },
+      {
+        "name": "ptr",
+        "type": "vec2",
+        "offset": 208,
+        "size": 8
+      },
+      {
+        "name": "tilt",
+        "type": "float",
+        "offset": 216,
+        "size": 4
+      },
+      {
+        "name": "o",
+        "type": "float",
+        "offset": 220,
+        "size": 4
+      },
+      {
+        "name": "depthAmt",
+        "type": "float",
+        "offset": 224,
+        "size": 4
+      },
+      {
+        "name": "relief",
+        "type": "float",
+        "offset": 228,
+        "size": 4
+      },
+      {
+        "name": "edgeResolve",
+        "type": "float",
+        "offset": 232,
+        "size": 4
+      },
+      {
+        "name": "gpuFlip_tex",
+        "type": "float",
+        "offset": 236,
+        "size": 4
+      },
+      {
+        "name": "gpuFlip_depthTex",
+        "type": "float",
+        "offset": 240,
+        "size": 4
+      },
+      {
+        "name": "gpuFlip_normalTex",
+        "type": "float",
+        "offset": 244,
+        "size": 4
+      },
+      {
+        "name": "gpuTargetHeight",
+        "type": "float",
+        "offset": 248,
+        "size": 4
+      }
+    ],
+    "textures": [
+      {
+        "name": "tex",
+        "binding": 0,
+        "flipOffset": 236
+      },
+      {
+        "name": "depthTex",
+        "binding": 2,
+        "flipOffset": 240
+      },
+      {
+        "name": "normalTex",
+        "binding": 4,
+        "flipOffset": 244
+      }
+    ],
+    "uniformSize": 256,
+    "heightOffset": 248,
+    "vertex": "@shader/Parallax/v.glsl",
+    "fragment": "@shader/Parallax/f.glsl"
+  },
+  {
+    "name": "mesh",
+    "attributes": [
+      {
+        "name": "pos",
+        "location": 0,
+        "size": 3
+      },
+      {
+        "name": "nrm",
+        "location": 1,
+        "size": 3
+      }
+    ],
+    "uniforms": [
+      {
+        "name": "proj",
+        "type": "mat4",
+        "offset": 0,
+        "size": 64
+      },
+      {
+        "name": "view",
+        "type": "mat4",
+        "offset": 64,
+        "size": 64
+      },
+      {
+        "name": "model",
+        "type": "mat4",
+        "offset": 128,
+        "size": 64
+      },
+      {
+        "name": "ext",
+        "type": "vec2",
+        "offset": 192,
+        "size": 8
+      },
+      {
+        "name": "o",
+        "type": "float",
+        "offset": 200,
+        "size": 4
+      },
+      {
+        "name": "rim",
+        "type": "float",
+        "offset": 204,
+        "size": 4
+      },
+      {
+        "name": "gpuFlip_matcap",
+        "type": "float",
+        "offset": 208,
+        "size": 4
+      },
+      {
+        "name": "gpuTargetHeight",
+        "type": "float",
+        "offset": 212,
+        "size": 4
+      }
+    ],
+    "textures": [
+      {
+        "name": "matcap",
+        "binding": 0,
+        "flipOffset": 208
+      }
+    ],
+    "uniformSize": 224,
+    "heightOffset": 212,
+    "vertex": "@shader/Mesh/v.glsl",
+    "fragment": "@shader/Mesh/f.glsl"
+  },
+  {
+    "name": "cast",
+    "attributes": [
+      {
+        "name": "pos",
+        "location": 0,
+        "size": 2
+      },
+      {
+        "name": "uv",
+        "location": 1,
+        "size": 2
+      }
+    ],
+    "uniforms": [
+      {
+        "name": "proj",
+        "type": "mat4",
+        "offset": 0,
+        "size": 64
+      },
+      {
+        "name": "view",
+        "type": "mat4",
+        "offset": 64,
+        "size": 64
+      },
+      {
+        "name": "model",
+        "type": "mat4",
+        "offset": 128,
+        "size": 64
+      },
+      {
+        "name": "o",
+        "type": "float",
+        "offset": 192,
+        "size": 4
+      },
+      {
+        "name": "ar",
+        "type": "float",
+        "offset": 196,
+        "size": 4
+      },
+      {
+        "name": "mk",
+        "type": "vec2",
+        "offset": 200,
+        "size": 8
+      },
+      {
+        "name": "yaw",
+        "type": "float",
+        "offset": 208,
+        "size": 4
+      },
+      {
+        "name": "sh",
+        "type": "float",
+        "offset": 212,
+        "size": 4
+      },
+      {
+        "name": "sp",
+        "type": "float",
+        "offset": 216,
+        "size": 4
+      },
+      {
+        "name": "gpuTargetHeight",
+        "type": "float",
+        "offset": 220,
+        "size": 4
+      }
+    ],
+    "textures": [],
+    "uniformSize": 224,
+    "heightOffset": 220,
+    "vertex": "@shader/Cast/v.glsl",
+    "fragment": "@shader/Cast/f.glsl"
+  },
+  {
+    "name": "msdf",
+    "attributes": [
+      {
+        "name": "pos",
+        "location": 0,
+        "size": 2
+      },
+      {
+        "name": "halo",
+        "location": 1,
+        "size": 4
+      },
+      {
+        "name": "gx",
+        "location": 2,
+        "size": 1
+      },
+      {
+        "name": "ub",
+        "location": 3,
+        "size": 2
+      },
+      {
+        "name": "av",
+        "location": 4,
+        "size": 3
+      },
+      {
+        "name": "al",
+        "location": 5,
+        "size": 1
+      },
+      {
+        "name": "dxm",
+        "location": 6,
+        "size": 1
+      },
+      {
+        "name": "ci",
+        "location": 7,
+        "size": 1
+      },
+      {
+        "name": "tr",
+        "location": 8,
+        "size": 1
+      },
+      {
+        "name": "ord",
+        "location": 9,
+        "size": 1
+      },
+      {
+        "name": "entry",
+        "location": 10,
+        "size": 1
+      }
+    ],
+    "uniforms": [
+      {
+        "name": "proj",
+        "type": "mat4",
+        "offset": 0,
+        "size": 64
+      },
+      {
+        "name": "view",
+        "type": "mat4",
+        "offset": 64,
+        "size": 64
+      },
+      {
+        "name": "model",
+        "type": "mat4",
+        "offset": 128,
+        "size": 64
+      },
+      {
+        "name": "fx",
+        "type": "float",
+        "offset": 192,
+        "size": 4
+      },
+      {
+        "name": "stag",
+        "type": "float",
+        "offset": 196,
+        "size": 4
+      },
+      {
+        "name": "nl",
+        "type": "float",
+        "offset": 200,
+        "size": 4
+      },
+      {
+        "name": "sp",
+        "type": "float",
+        "offset": 204,
+        "size": 4
+      },
+      {
+        "name": "dir",
+        "type": "float",
+        "offset": 208,
+        "size": 4
+      },
+      {
+        "name": "rise",
+        "type": "vec4",
+        "offset": 224,
+        "size": 16
+      },
+      {
+        "name": "riseDistance",
+        "type": "float",
+        "offset": 240,
+        "size": 4
+      },
+      {
+        "name": "riseExit",
+        "type": "float",
+        "offset": 244,
+        "size": 4
+      },
+      {
+        "name": "lineStep",
+        "type": "float",
+        "offset": 248,
+        "size": 4
+      },
+      {
+        "name": "inkActive",
+        "type": "float",
+        "offset": 252,
+        "size": 4
+      },
+      {
+        "name": "tint",
+        "type": "vec3",
+        "offset": 256,
+        "size": 12
+      },
+      {
+        "name": "o",
+        "type": "float",
+        "offset": 268,
+        "size": 4
+      },
+      {
+        "name": "range",
+        "type": "float",
+        "offset": 272,
+        "size": 4
+      },
+      {
+        "name": "bg",
+        "type": "vec3",
+        "offset": 288,
+        "size": 12
+      },
+      {
+        "name": "bgGn",
+        "type": "float",
+        "offset": 300,
+        "size": 4
+      },
+      {
+        "name": "inkViewport",
+        "type": "vec2",
+        "offset": 304,
+        "size": 8
+      },
+      {
+        "name": "inkFrame",
+        "type": "vec4",
+        "offset": 320,
+        "size": 16
+      },
+      {
+        "name": "inkSize",
+        "type": "float",
+        "offset": 336,
+        "size": 4
+      },
+      {
+        "name": "inkScroll",
+        "type": "float",
+        "offset": 340,
+        "size": 4
+      },
+      {
+        "name": "gpuFlip_tex",
+        "type": "float",
+        "offset": 344,
+        "size": 4
+      },
+      {
+        "name": "gpuFlip_inkField",
+        "type": "float",
+        "offset": 348,
+        "size": 4
+      },
+      {
+        "name": "gpuTargetHeight",
+        "type": "float",
+        "offset": 352,
+        "size": 4
+      }
+    ],
+    "textures": [
+      {
+        "name": "tex",
+        "binding": 0,
+        "flipOffset": 344
+      },
+      {
+        "name": "inkField",
+        "binding": 2,
+        "flipOffset": 348
+      }
+    ],
+    "uniformSize": 368,
+    "heightOffset": 352,
+    "vertex": "@shader/Msdf/v.glsl",
+    "fragment": "@shader/Msdf/f.glsl"
+  },
+  {
+    "name": "mosh",
+    "attributes": [
+      {
+        "name": "pos",
+        "location": 0,
+        "size": 2
+      },
+      {
+        "name": "uv",
+        "location": 1,
+        "size": 2
+      }
+    ],
+    "uniforms": [
+      {
+        "name": "res",
+        "type": "vec2",
+        "offset": 0,
+        "size": 8
+      },
+      {
+        "name": "damage",
+        "type": "float",
+        "offset": 8,
+        "size": 4
+      },
+      {
+        "name": "heat",
+        "type": "float",
+        "offset": 12,
+        "size": 4
+      },
+      {
+        "name": "center",
+        "type": "vec2",
+        "offset": 16,
+        "size": 8
+      },
+      {
+        "name": "ext",
+        "type": "vec2",
+        "offset": 24,
+        "size": 8
+      },
+      {
+        "name": "prog",
+        "type": "float",
+        "offset": 32,
+        "size": 4
+      },
+      {
+        "name": "bounds",
+        "type": "vec4",
+        "offset": 48,
+        "size": 16
+      },
+      {
+        "name": "srcRect",
+        "type": "vec4",
+        "offset": 64,
+        "size": 16
+      },
+      {
+        "name": "blockPx",
+        "type": "float",
+        "offset": 80,
+        "size": 4
+      },
+      {
+        "name": "smear",
+        "type": "float",
+        "offset": 84,
+        "size": 4
+      },
+      {
+        "name": "bend",
+        "type": "float",
+        "offset": 88,
+        "size": 4
+      },
+      {
+        "name": "profile",
+        "type": "float",
+        "offset": 92,
+        "size": 4
+      },
+      {
+        "name": "revealHold",
+        "type": "float",
+        "offset": 96,
+        "size": 4
+      },
+      {
+        "name": "revealSeed",
+        "type": "float",
+        "offset": 100,
+        "size": 4
+      },
+      {
+        "name": "historyFill",
+        "type": "vec4",
+        "offset": 112,
+        "size": 16
+      },
+      {
+        "name": "shiftDir",
+        "type": "vec2",
+        "offset": 128,
+        "size": 8
+      },
+      {
+        "name": "verticalOnly",
+        "type": "float",
+        "offset": 136,
+        "size": 4
+      },
+      {
+        "name": "anchorRect",
+        "type": "vec4",
+        "offset": 144,
+        "size": 16
+      },
+      {
+        "name": "carry",
+        "type": "float",
+        "offset": 160,
+        "size": 4
+      },
+      {
+        "name": "hardMask",
+        "type": "float",
+        "offset": 164,
+        "size": 4
+      },
+      {
+        "name": "dt",
+        "type": "float",
+        "offset": 168,
+        "size": 4
+      },
+      {
+        "name": "slit",
+        "type": "float",
+        "offset": 172,
+        "size": 4
+      },
+      {
+        "name": "bloom",
+        "type": "float",
+        "offset": 176,
+        "size": 4
+      },
+      {
+        "name": "glitchC",
+        "type": "float",
+        "offset": 180,
+        "size": 4
+      },
+      {
+        "name": "slitSeed",
+        "type": "float",
+        "offset": 184,
+        "size": 4
+      },
+      {
+        "name": "slitComp",
+        "type": "vec2",
+        "offset": 192,
+        "size": 8
+      },
+      {
+        "name": "shred",
+        "type": "float",
+        "offset": 200,
+        "size": 4
+      },
+      {
+        "name": "bootFx",
+        "type": "vec3",
+        "offset": 208,
+        "size": 12
+      },
+      {
+        "name": "dFlowAmp",
+        "type": "float",
+        "offset": 220,
+        "size": 4
+      },
+      {
+        "name": "gpuFlip_scene",
+        "type": "float",
+        "offset": 224,
+        "size": 4
+      },
+      {
+        "name": "gpuFlip_hist",
+        "type": "float",
+        "offset": 228,
+        "size": 4
+      },
+      {
+        "name": "gpuFlip_flow",
+        "type": "float",
+        "offset": 232,
+        "size": 4
+      },
+      {
+        "name": "gpuTargetHeight",
+        "type": "float",
+        "offset": 236,
+        "size": 4
+      }
+    ],
+    "textures": [
+      {
+        "name": "scene",
+        "binding": 0,
+        "flipOffset": 224
+      },
+      {
+        "name": "hist",
+        "binding": 2,
+        "flipOffset": 228
+      },
+      {
+        "name": "flow",
+        "binding": 4,
+        "flipOffset": 232
+      }
+    ],
+    "uniformSize": 240,
+    "heightOffset": 236,
+    "vertex": "@shader/Mosh/v.glsl",
+    "fragment": "@shader/Mosh/f.glsl"
+  },
+  {
+    "name": "moshBlit",
+    "attributes": [
+      {
+        "name": "pos",
+        "location": 0,
+        "size": 2
+      },
+      {
+        "name": "uv",
+        "location": 1,
+        "size": 2
+      }
+    ],
+    "uniforms": [
+      {
+        "name": "gpuFlip_tex",
+        "type": "float",
+        "offset": 0,
+        "size": 4
+      },
+      {
+        "name": "gpuTargetHeight",
+        "type": "float",
+        "offset": 4,
+        "size": 4
+      }
+    ],
+    "textures": [
+      {
+        "name": "tex",
+        "binding": 0,
+        "flipOffset": 0
+      }
+    ],
+    "uniformSize": 16,
+    "heightOffset": 4,
+    "vertex": "@shader/Mosh/v.glsl",
+    "fragment": "@shader/MoshBlit/f.glsl"
+  },
+  {
+    "name": "moshFlow",
+    "attributes": [
+      {
+        "name": "pos",
+        "location": 0,
+        "size": 2
+      },
+      {
+        "name": "uv",
+        "location": 1,
+        "size": 2
+      }
+    ],
+    "uniforms": [
+      {
+        "name": "res",
+        "type": "vec2",
+        "offset": 0,
+        "size": 8
+      },
+      {
+        "name": "uTime",
+        "type": "float",
+        "offset": 8,
+        "size": 4
+      },
+      {
+        "name": "uDt",
+        "type": "float",
+        "offset": 12,
+        "size": 4
+      },
+      {
+        "name": "uVar",
+        "type": "float",
+        "offset": 16,
+        "size": 4
+      },
+      {
+        "name": "uDir",
+        "type": "vec2",
+        "offset": 24,
+        "size": 8
+      },
+      {
+        "name": "uMode",
+        "type": "float",
+        "offset": 32,
+        "size": 4
+      },
+      {
+        "name": "gpuTargetHeight",
+        "type": "float",
+        "offset": 36,
+        "size": 4
+      }
+    ],
+    "textures": [],
+    "uniformSize": 48,
+    "heightOffset": 36,
+    "vertex": "@shader/Mosh/v.glsl",
+    "fragment": "@shader/MoshFlow/f.glsl"
+  },
+  {
+    "name": "moshSeed",
+    "attributes": [
+      {
+        "name": "pos",
+        "location": 0,
+        "size": 2
+      },
+      {
+        "name": "uv",
+        "location": 1,
+        "size": 2
+      }
+    ],
+    "uniforms": [
+      {
+        "name": "center",
+        "type": "vec2",
+        "offset": 0,
+        "size": 8
+      },
+      {
+        "name": "ext",
+        "type": "vec2",
+        "offset": 8,
+        "size": 8
+      },
+      {
+        "name": "cover",
+        "type": "vec2",
+        "offset": 16,
+        "size": 8
+      },
+      {
+        "name": "zoom",
+        "type": "float",
+        "offset": 24,
+        "size": 4
+      },
+      {
+        "name": "gpuFlip_tex",
+        "type": "float",
+        "offset": 28,
+        "size": 4
+      },
+      {
+        "name": "gpuTargetHeight",
+        "type": "float",
+        "offset": 32,
+        "size": 4
+      }
+    ],
+    "textures": [
+      {
+        "name": "tex",
+        "binding": 0,
+        "flipOffset": 28
+      }
+    ],
+    "uniformSize": 48,
+    "heightOffset": 32,
+    "vertex": "@shader/MoshSeed/v.glsl",
+    "fragment": "@shader/MoshSeed/f.glsl"
+  },
+  {
+    "name": "moshStatic",
+    "attributes": [
+      {
+        "name": "pos",
+        "location": 0,
+        "size": 2
+      },
+      {
+        "name": "uv",
+        "location": 1,
+        "size": 2
+      }
+    ],
+    "uniforms": [
+      {
+        "name": "res",
+        "type": "vec2",
+        "offset": 0,
+        "size": 8
+      },
+      {
+        "name": "amt",
+        "type": "float",
+        "offset": 8,
+        "size": 4
+      },
+      {
+        "name": "seed",
+        "type": "float",
+        "offset": 12,
+        "size": 4
+      },
+      {
+        "name": "cell",
+        "type": "float",
+        "offset": 16,
+        "size": 4
+      },
+      {
+        "name": "gpuTargetHeight",
+        "type": "float",
+        "offset": 20,
+        "size": 4
+      }
+    ],
+    "textures": [],
+    "uniformSize": 32,
+    "heightOffset": 20,
+    "vertex": "@shader/Mosh/v.glsl",
+    "fragment": "@shader/MoshStatic/f.glsl"
+  },
+  {
+    "name": "introList",
+    "attributes": [
+      {
+        "name": "uv",
+        "location": 0,
+        "size": 2
+      }
+    ],
+    "uniforms": [
+      {
+        "name": "rect",
+        "type": "vec4",
+        "offset": 0,
+        "size": 16
+      },
+      {
+        "name": "viewport",
+        "type": "vec3",
+        "offset": 16,
+        "size": 12
+      },
+      {
+        "name": "mode",
+        "type": "float",
+        "offset": 28,
+        "size": 4
+      },
+      {
+        "name": "reveal",
+        "type": "vec3",
+        "offset": 32,
+        "size": 12
+      },
+      {
+        "name": "cloth",
+        "type": "vec4",
+        "offset": 48,
+        "size": 16
+      },
+      {
+        "name": "cover",
+        "type": "vec2",
+        "offset": 64,
+        "size": 8
+      },
+      {
+        "name": "relief",
+        "type": "vec2",
+        "offset": 72,
+        "size": 8
+      },
+      {
+        "name": "opacity",
+        "type": "float",
+        "offset": 80,
+        "size": 4
+      },
+      {
+        "name": "backdrop",
+        "type": "float",
+        "offset": 84,
+        "size": 4
+      },
+      {
+        "name": "flip",
+        "type": "float",
+        "offset": 88,
+        "size": 4
+      },
+      {
+        "name": "landing",
+        "type": "vec4",
+        "offset": 96,
+        "size": 16
+      },
+      {
+        "name": "logo",
+        "type": "vec4",
+        "offset": 112,
+        "size": 16
+      },
+      {
+        "name": "logoCover",
+        "type": "float",
+        "offset": 128,
+        "size": 4
+      },
+      {
+        "name": "build",
+        "type": "float",
+        "offset": 132,
+        "size": 4
+      },
+      {
+        "name": "grain",
+        "type": "vec3",
+        "offset": 144,
+        "size": 12
+      },
+      {
+        "name": "gpuFlip_depthTex",
+        "type": "float",
+        "offset": 156,
+        "size": 4
+      },
+      {
+        "name": "gpuFlip_tex",
+        "type": "float",
+        "offset": 160,
+        "size": 4
+      },
+      {
+        "name": "gpuFlip_normalTex",
+        "type": "float",
+        "offset": 164,
+        "size": 4
+      },
+      {
+        "name": "gpuTargetHeight",
+        "type": "float",
+        "offset": 168,
+        "size": 4
+      }
+    ],
+    "textures": [
+      {
+        "name": "depthTex",
+        "binding": 0,
+        "flipOffset": 156
+      },
+      {
+        "name": "tex",
+        "binding": 2,
+        "flipOffset": 160
+      },
+      {
+        "name": "normalTex",
+        "binding": 4,
+        "flipOffset": 164
+      }
+    ],
+    "uniformSize": 176,
+    "heightOffset": 168,
+    "vertex": "@shader/intro-list/v.glsl",
+    "fragment": "@shader/intro-list/f.glsl"
+  },
+  {
+    "name": "introCapture",
+    "attributes": [
+      {
+        "name": "pos",
+        "location": 0,
+        "size": 2
+      },
+      {
+        "name": "uv",
+        "location": 1,
+        "size": 2
+      }
+    ],
+    "uniforms": [
+      {
+        "name": "placement",
+        "type": "vec3",
+        "offset": 0,
+        "size": 12
+      },
+      {
+        "name": "gpuFlip_scene",
+        "type": "float",
+        "offset": 12,
+        "size": 4
+      },
+      {
+        "name": "gpuTargetHeight",
+        "type": "float",
+        "offset": 16,
+        "size": 4
+      }
+    ],
+    "textures": [
+      {
+        "name": "scene",
+        "binding": 0,
+        "flipOffset": 12
+      }
+    ],
+    "uniformSize": 32,
+    "heightOffset": 16,
+    "vertex": "@shader/Mosh/v.glsl",
+    "fragment": "@shader/mosh-intro/capture.glsl"
+  },
+  {
+    "name": "introFlow",
+    "attributes": [
+      {
+        "name": "pos",
+        "location": 0,
+        "size": 2
+      },
+      {
+        "name": "uv",
+        "location": 1,
+        "size": 2
+      }
+    ],
+    "uniforms": [
+      {
+        "name": "grid",
+        "type": "vec2",
+        "offset": 0,
+        "size": 8
+      },
+      {
+        "name": "gpuFlip_currentFrame",
+        "type": "float",
+        "offset": 8,
+        "size": 4
+      },
+      {
+        "name": "gpuFlip_previousFrame",
+        "type": "float",
+        "offset": 12,
+        "size": 4
+      },
+      {
+        "name": "gpuTargetHeight",
+        "type": "float",
+        "offset": 16,
+        "size": 4
+      }
+    ],
+    "textures": [
+      {
+        "name": "currentFrame",
+        "binding": 0,
+        "flipOffset": 8
+      },
+      {
+        "name": "previousFrame",
+        "binding": 2,
+        "flipOffset": 12
+      }
+    ],
+    "uniformSize": 32,
+    "heightOffset": 16,
+    "vertex": "@shader/Mosh/v.glsl",
+    "fragment": "@shader/mosh-intro/flow.glsl"
+  },
+  {
+    "name": "introFeedback",
+    "attributes": [
+      {
+        "name": "pos",
+        "location": 0,
+        "size": 2
+      },
+      {
+        "name": "uv",
+        "location": 1,
+        "size": 2
+      }
+    ],
+    "uniforms": [
+      {
+        "name": "res",
+        "type": "vec2",
+        "offset": 0,
+        "size": 8
+      },
+      {
+        "name": "grid",
+        "type": "vec2",
+        "offset": 8,
+        "size": 8
+      },
+      {
+        "name": "placement",
+        "type": "vec3",
+        "offset": 16,
+        "size": 12
+      },
+      {
+        "name": "transfer",
+        "type": "float",
+        "offset": 28,
+        "size": 4
+      },
+      {
+        "name": "release",
+        "type": "float",
+        "offset": 32,
+        "size": 4
+      },
+      {
+        "name": "frames",
+        "type": "float",
+        "offset": 36,
+        "size": 4
+      },
+      {
+        "name": "hold",
+        "type": "float",
+        "offset": 40,
+        "size": 4
+      },
+      {
+        "name": "clean",
+        "type": "float",
+        "offset": 44,
+        "size": 4
+      },
+      {
+        "name": "gpuFlip_scene",
+        "type": "float",
+        "offset": 48,
+        "size": 4
+      },
+      {
+        "name": "gpuFlip_history",
+        "type": "float",
+        "offset": 52,
+        "size": 4
+      },
+      {
+        "name": "gpuFlip_previousFrame",
+        "type": "float",
+        "offset": 56,
+        "size": 4
+      },
+      {
+        "name": "gpuFlip_motion",
+        "type": "float",
+        "offset": 60,
+        "size": 4
+      },
+      {
+        "name": "gpuTargetHeight",
+        "type": "float",
+        "offset": 64,
+        "size": 4
+      }
+    ],
+    "textures": [
+      {
+        "name": "scene",
+        "binding": 0,
+        "flipOffset": 48
+      },
+      {
+        "name": "history",
+        "binding": 2,
+        "flipOffset": 52
+      },
+      {
+        "name": "previousFrame",
+        "binding": 4,
+        "flipOffset": 56
+      },
+      {
+        "name": "motion",
+        "binding": 6,
+        "flipOffset": 60
+      }
+    ],
+    "uniformSize": 80,
+    "heightOffset": 64,
+    "vertex": "@shader/Mosh/v.glsl",
+    "fragment": "@shader/mosh-intro/feedback.glsl"
+  },
+  {
+    "name": "pointerInkResolve",
+    "attributes": [
+      {
+        "name": "pos",
+        "location": 0,
+        "size": 2
+      },
+      {
+        "name": "uv",
+        "location": 1,
+        "size": 2
+      }
+    ],
+    "uniforms": [
+      {
+        "name": "texel",
+        "type": "vec2",
+        "offset": 0,
+        "size": 8
+      },
+      {
+        "name": "phase",
+        "type": "float",
+        "offset": 8,
+        "size": 4
+      },
+      {
+        "name": "offsets",
+        "type": "vec2",
+        "offset": 16,
+        "size": 8
+      },
+      {
+        "name": "focus",
+        "type": "vec3",
+        "offset": 32,
+        "size": 12
+      },
+      {
+        "name": "aspect",
+        "type": "float",
+        "offset": 44,
+        "size": 4
+      },
+      {
+        "name": "clampEdges",
+        "type": "float",
+        "offset": 48,
+        "size": 4
+      },
+      {
+        "name": "gpuFlip_current",
+        "type": "float",
+        "offset": 52,
+        "size": 4
+      },
+      {
+        "name": "gpuFlip_previous",
+        "type": "float",
+        "offset": 56,
+        "size": 4
+      },
+      {
+        "name": "gpuTargetHeight",
+        "type": "float",
+        "offset": 60,
+        "size": 4
+      }
+    ],
+    "textures": [
+      {
+        "name": "current",
+        "binding": 0,
+        "flipOffset": 52
+      },
+      {
+        "name": "previous",
+        "binding": 2,
+        "flipOffset": 56
+      }
+    ],
+    "uniformSize": 64,
+    "heightOffset": 60,
+    "vertex": "@shader/Mosh/v.glsl",
+    "fragment": "@shader/pointer-ripple/resolve.glsl"
+  },
+  {
+    "name": "pointerInkAura",
+    "attributes": [
+      {
+        "name": "pos",
+        "location": 0,
+        "size": 2
+      },
+      {
+        "name": "uv",
+        "location": 1,
+        "size": 2
+      }
+    ],
+    "uniforms": [
+      {
+        "name": "viewport",
+        "type": "vec2",
+        "offset": 0,
+        "size": 8
+      },
+      {
+        "name": "padding",
+        "type": "float",
+        "offset": 8,
+        "size": 4
+      },
+      {
+        "name": "scroll",
+        "type": "float",
+        "offset": 12,
+        "size": 4
+      },
+      {
+        "name": "gpuFlip_inkField",
+        "type": "float",
+        "offset": 16,
+        "size": 4
+      },
+      {
+        "name": "gpuTargetHeight",
+        "type": "float",
+        "offset": 20,
+        "size": 4
+      }
+    ],
+    "textures": [
+      {
+        "name": "inkField",
+        "binding": 0,
+        "flipOffset": 16
+      }
+    ],
+    "uniformSize": 32,
+    "heightOffset": 20,
+    "vertex": "@shader/Mosh/v.glsl",
+    "fragment": "@shader/pointer-ripple/aura.glsl"
+  },
+  {
+    "name": "pointerRipple",
+    "attributes": [
+      {
+        "name": "pos",
+        "location": 0,
+        "size": 2
+      },
+      {
+        "name": "uv",
+        "location": 1,
+        "size": 2
+      }
+    ],
+    "uniforms": [
+      {
+        "name": "texel",
+        "type": "vec2",
+        "offset": 0,
+        "size": 8
+      },
+      {
+        "name": "aspect",
+        "type": "float",
+        "offset": 8,
+        "size": 4
+      },
+      {
+        "name": "radius",
+        "type": "float",
+        "offset": 12,
+        "size": 4
+      },
+      {
+        "name": "shift",
+        "type": "float",
+        "offset": 16,
+        "size": 4
+      },
+      {
+        "name": "origin",
+        "type": "float",
+        "offset": 20,
+        "size": 4
+      },
+      {
+        "name": "clampEdges",
+        "type": "float",
+        "offset": 24,
+        "size": 4
+      },
+      {
+        "name": "motionScale",
+        "type": "vec2",
+        "offset": 32,
+        "size": 8
+      },
+      {
+        "name": "brushGain",
+        "type": "float",
+        "offset": 40,
+        "size": 4
+      },
+      {
+        "name": "viewport",
+        "type": "vec2",
+        "offset": 48,
+        "size": 8
+      },
+      {
+        "name": "cloudRadius",
+        "type": "float",
+        "offset": 56,
+        "size": 4
+      },
+      {
+        "name": "cloudPhase",
+        "type": "float",
+        "offset": 60,
+        "size": 4
+      },
+      {
+        "name": "dropsA",
+        "type": "mat4",
+        "offset": 64,
+        "size": 64
+      },
+      {
+        "name": "dropsB",
+        "type": "mat4",
+        "offset": 128,
+        "size": 64
+      },
+      {
+        "name": "flowA",
+        "type": "mat4",
+        "offset": 192,
+        "size": 64
+      },
+      {
+        "name": "flowB",
+        "type": "mat4",
+        "offset": 256,
+        "size": 64
+      },
+      {
+        "name": "gpuFlip_current",
+        "type": "float",
+        "offset": 320,
+        "size": 4
+      },
+      {
+        "name": "gpuTargetHeight",
+        "type": "float",
+        "offset": 324,
+        "size": 4
+      }
+    ],
+    "textures": [
+      {
+        "name": "current",
+        "binding": 0,
+        "flipOffset": 320
+      }
+    ],
+    "uniformSize": 336,
+    "heightOffset": 324,
+    "vertex": "@shader/Mosh/v.glsl",
+    "fragment": "@shader/pointer-ripple/f.glsl"
+  },
+  {
+    "name": "inkBleed",
+    "attributes": [
+      {
+        "name": "pos",
+        "location": 0,
+        "size": 2
+      },
+      {
+        "name": "uv",
+        "location": 1,
+        "size": 2
+      }
+    ],
+    "uniforms": [
+      {
+        "name": "res",
+        "type": "vec2",
+        "offset": 0,
+        "size": 8
+      },
+      {
+        "name": "cover",
+        "type": "vec2",
+        "offset": 8,
+        "size": 8
+      },
+      {
+        "name": "carryCover",
+        "type": "vec2",
+        "offset": 16,
+        "size": 8
+      },
+      {
+        "name": "carryFront",
+        "type": "vec3",
+        "offset": 32,
+        "size": 12
+      },
+      {
+        "name": "progress",
+        "type": "float",
+        "offset": 44,
+        "size": 4
+      },
+      {
+        "name": "seed",
+        "type": "float",
+        "offset": 48,
+        "size": 4
+      },
+      {
+        "name": "retarget",
+        "type": "float",
+        "offset": 52,
+        "size": 4
+      },
+      {
+        "name": "alpha",
+        "type": "float",
+        "offset": 56,
+        "size": 4
+      },
+      {
+        "name": "gpuFlip_media",
+        "type": "float",
+        "offset": 60,
+        "size": 4
+      },
+      {
+        "name": "gpuFlip_previous",
+        "type": "float",
+        "offset": 64,
+        "size": 4
+      },
+      {
+        "name": "gpuFlip_continuing",
+        "type": "float",
+        "offset": 68,
+        "size": 4
+      },
+      {
+        "name": "gpuTargetHeight",
+        "type": "float",
+        "offset": 72,
+        "size": 4
+      }
+    ],
+    "textures": [
+      {
+        "name": "media",
+        "binding": 0,
+        "flipOffset": 60
+      },
+      {
+        "name": "previous",
+        "binding": 2,
+        "flipOffset": 64
+      },
+      {
+        "name": "continuing",
+        "binding": 4,
+        "flipOffset": 68
+      }
+    ],
+    "uniformSize": 80,
+    "heightOffset": 72,
+    "vertex": "@shader/Mosh/v.glsl",
+    "fragment": "@shader/ink-bleed/f.glsl"
+  },
+  {
+    "name": "inkLabel",
+    "attributes": [
+      {
+        "name": "pos",
+        "location": 0,
+        "size": 2
+      },
+      {
+        "name": "uv",
+        "location": 1,
+        "size": 2
+      }
+    ],
+    "uniforms": [
+      {
+        "name": "rect",
+        "type": "vec4",
+        "offset": 0,
+        "size": 16
+      },
+      {
+        "name": "res",
+        "type": "vec2",
+        "offset": 16,
+        "size": 8
+      },
+      {
+        "name": "progress",
+        "type": "float",
+        "offset": 24,
+        "size": 4
+      },
+      {
+        "name": "ink",
+        "type": "float",
+        "offset": 28,
+        "size": 4
+      },
+      {
+        "name": "gpuFlip_media",
+        "type": "float",
+        "offset": 32,
+        "size": 4
+      },
+      {
+        "name": "gpuFlip_previous",
+        "type": "float",
+        "offset": 36,
+        "size": 4
+      },
+      {
+        "name": "gpuTargetHeight",
+        "type": "float",
+        "offset": 40,
+        "size": 4
+      }
+    ],
+    "textures": [
+      {
+        "name": "media",
+        "binding": 0,
+        "flipOffset": 32
+      },
+      {
+        "name": "previous",
+        "binding": 2,
+        "flipOffset": 36
+      }
+    ],
+    "uniformSize": 48,
+    "heightOffset": 40,
+    "vertex": "@shader/ink-label/v.glsl",
+    "fragment": "@shader/ink-label/f.glsl"
+  },
+  {
+    "name": "previewPaper",
+    "attributes": [
+      {
+        "name": "pos",
+        "location": 0,
+        "size": 2
+      },
+      {
+        "name": "uv",
+        "location": 1,
+        "size": 2
+      }
+    ],
+    "uniforms": [
+      {
+        "name": "proj",
+        "type": "mat4",
+        "offset": 0,
+        "size": 64
+      },
+      {
+        "name": "view",
+        "type": "mat4",
+        "offset": 64,
+        "size": 64
+      },
+      {
+        "name": "model",
+        "type": "mat4",
+        "offset": 128,
+        "size": 64
+      },
+      {
+        "name": "size",
+        "type": "vec2",
+        "offset": 192,
+        "size": 8
+      },
+      {
+        "name": "paper",
+        "type": "vec2",
+        "offset": 200,
+        "size": 8
+      },
+      {
+        "name": "curlEdges",
+        "type": "vec2",
+        "offset": 208,
+        "size": 8
+      },
+      {
+        "name": "dualCurl",
+        "type": "float",
+        "offset": 216,
+        "size": 4
+      },
+      {
+        "name": "depthLimit",
+        "type": "float",
+        "offset": 220,
+        "size": 4
+      },
+      {
+        "name": "reveal",
+        "type": "float",
+        "offset": 224,
+        "size": 4
+      },
+      {
+        "name": "flight",
+        "type": "vec3",
+        "offset": 240,
+        "size": 12
+      },
+      {
+        "name": "rotation",
+        "type": "vec2",
+        "offset": 256,
+        "size": 8
+      },
+      {
+        "name": "bow",
+        "type": "float",
+        "offset": 264,
+        "size": 4
+      },
+      {
+        "name": "flatWave",
+        "type": "float",
+        "offset": 268,
+        "size": 4
+      },
+      {
+        "name": "cloth",
+        "type": "vec4",
+        "offset": 272,
+        "size": 16
+      },
+      {
+        "name": "bendWindow",
+        "type": "vec2",
+        "offset": 288,
+        "size": 8
+      },
+      {
+        "name": "inkFrame",
+        "type": "vec4",
+        "offset": 304,
+        "size": 16
+      },
+      {
+        "name": "inkBend",
+        "type": "float",
+        "offset": 320,
+        "size": 4
+      },
+      {
+        "name": "inkEdge",
+        "type": "float",
+        "offset": 324,
+        "size": 4
+      },
+      {
+        "name": "o",
+        "type": "float",
+        "offset": 328,
+        "size": 4
+      },
+      {
+        "name": "gpuFlip_inkField",
+        "type": "float",
+        "offset": 332,
+        "size": 4
+      },
+      {
+        "name": "gpuFlip_tex",
+        "type": "float",
+        "offset": 336,
+        "size": 4
+      },
+      {
+        "name": "gpuTargetHeight",
+        "type": "float",
+        "offset": 340,
+        "size": 4
+      }
+    ],
+    "textures": [
+      {
+        "name": "inkField",
+        "binding": 0,
+        "flipOffset": 332
+      },
+      {
+        "name": "tex",
+        "binding": 2,
+        "flipOffset": 336
+      }
+    ],
+    "uniformSize": 352,
+    "heightOffset": 340,
+    "vertex": "@shader/preview-paper/v.glsl",
+    "fragment": "@shader/preview-paper/f.glsl"
+  },
+  {
+    "name": "projectExit",
+    "attributes": [
+      {
+        "name": "pos",
+        "location": 0,
+        "size": 2
+      },
+      {
+        "name": "uv",
+        "location": 1,
+        "size": 2
+      }
+    ],
+    "uniforms": [
+      {
+        "name": "viewport",
+        "type": "vec4",
+        "offset": 0,
+        "size": 16
+      },
+      {
+        "name": "region",
+        "type": "vec4",
+        "offset": 16,
+        "size": 16
+      },
+      {
+        "name": "shift",
+        "type": "vec2",
+        "offset": 32,
+        "size": 8
+      },
+      {
+        "name": "bend",
+        "type": "vec3",
+        "offset": 48,
+        "size": 12
+      },
+      {
+        "name": "axis",
+        "type": "float",
+        "offset": 60,
+        "size": 4
+      },
+      {
+        "name": "clip",
+        "type": "vec2",
+        "offset": 64,
+        "size": 8
+      },
+      {
+        "name": "gpuFlip_tex",
+        "type": "float",
+        "offset": 72,
+        "size": 4
+      },
+      {
+        "name": "gpuTargetHeight",
+        "type": "float",
+        "offset": 76,
+        "size": 4
+      }
+    ],
+    "textures": [
+      {
+        "name": "tex",
+        "binding": 0,
+        "flipOffset": 72
+      }
+    ],
+    "uniformSize": 80,
+    "heightOffset": 76,
+    "vertex": "@shader/project-exit/v.glsl",
+    "fragment": "@shader/project-exit/f.glsl"
+  }
+]

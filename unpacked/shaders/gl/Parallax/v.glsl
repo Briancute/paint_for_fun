@@ -1,0 +1,2 @@
+#version 300 es
+precision highp float;in vec2 pos;in vec2 uv;uniform mat4 proj;uniform mat4 view;uniform mat4 model;uniform float z;uniform vec2 cover;uniform vec2 ptr;uniform float tilt;out vec2 vUv;out vec2 vQuv;void main(){vec2 c=uv-0.5;vec2 lp=clamp(ptr,-1.0,1.0);float lean=(c.x*lp.x-c.y*lp.y)*tilt;vec4 p=view*model*vec4(pos.x,pos.y,z+lean,1.);gl_Position=proj*p;vUv=(uv-.5)/cover+.5;vQuv=uv;}

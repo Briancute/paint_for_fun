@@ -1,0 +1,594 @@
+{
+  "v": "\"c8ee07a26e97756ca1546ff48334b247b1c9d5dda786389f295cdcf9644e3d4c\"",
+  "rtes": {
+    "/": {
+      "id": "ho",
+      "t": "BRIAN FAJARDO — Web Developer"
+    },
+    "/about": {
+      "id": "ab",
+      "t": "About — BRIAN FAJARDO",
+      "pp": 1
+    },
+    "/contact": {
+      "id": "co",
+      "t": "Contact — BRIAN FAJARDO"
+    },
+    "/404": {
+      "id": "nf",
+      "t": "Page not found"
+    },
+    "/work/obys": {
+      "id": "pr",
+      "t": "Obys Agency — BRIAN FAJARDO"
+    },
+    "/work/mariavasilyeva": {
+      "id": "pr",
+      "t": "Maria Vasilyeva — BRIAN FAJARDO"
+    },
+    "/work/alexandercooke": {
+      "id": "pr",
+      "t": "Alexander Cooke — BRIAN FAJARDO"
+    },
+    "/work/yellowbelly": {
+      "id": "pr",
+      "t": "YellowBelly Photo — BRIAN FAJARDO"
+    },
+    "/work/champ": {
+      "id": "pr",
+      "t": "Champ Studio — BRIAN FAJARDO"
+    },
+    "/work/sofa": {
+      "id": "pr",
+      "t": "SofaKnows — BRIAN FAJARDO"
+    },
+    "/work/ptf": {
+      "id": "pr",
+      "t": "Power Type — BRIAN FAJARDO"
+    },
+    "/work/massivegood": {
+      "id": "pr",
+      "t": "Massive Good — BRIAN FAJARDO"
+    },
+    "/work/zerotrillion": {
+      "id": "pr",
+      "t": "Zerotrillion — BRIAN FAJARDO"
+    },
+    "/work/mode-26": {
+      "id": "pr",
+      "t": "Mode Festival 2026 — BRIAN FAJARDO"
+    },
+    "/work/freeform-26": {
+      "id": "pr",
+      "t": "Freeform Festival 2026 — BRIAN FAJARDO"
+    },
+    "/work/overtone-26": {
+      "id": "pr",
+      "t": "Overtone Festiva 2026 — BRIAN FAJARDO"
+    },
+    "/work/carlesfaus": {
+      "id": "pr",
+      "t": "Carles Faus — BRIAN FAJARDO"
+    },
+    "/work/cristinagomez": {
+      "id": "pr",
+      "t": "Cristina Gomez — BRIAN FAJARDO"
+    }
+  },
+  "dta": {
+    "gl": {
+      "/": [
+        {
+          "src": "/ho/ho.webp",
+          "ratio": 0.8276041666666667,
+          "k": "i"
+        },
+        {
+          "src": "/wo/obys/0.webp",
+          "ratio": 0.7766990291262136,
+          "k": "i"
+        },
+        {
+          "src": "/wo/maria-vasilyeva/0.webp",
+          "ratio": 0.7766990291262136,
+          "k": "i"
+        },
+        {
+          "src": "/wo/alex/0.webp",
+          "ratio": 0.8,
+          "k": "i"
+        },
+        {
+          "src": "/wo/yellowbelly/0.webp",
+          "ratio": 0.7766990291262136,
+          "k": "i"
+        },
+        {
+          "src": "/wo/champ/0.mp4",
+          "ratio": 1.7777777777777777,
+          "k": "v"
+        },
+        {
+          "src": "/wo/sofa/0.webp",
+          "ratio": 0.7766990291262136,
+          "k": "i"
+        },
+        {
+          "src": "/wo/ptf/0.webp",
+          "ratio": 0.7766990291262136,
+          "k": "i"
+        },
+        {
+          "src": "/wo/massivegood/0.webp",
+          "ratio": 0.7766990291262136,
+          "k": "i"
+        },
+        {
+          "src": "/wo/zerotrillion/0.mp4",
+          "ratio": 1.7777777777777777,
+          "k": "v"
+        },
+        {
+          "src": "/wo/mode-26/0.mp4",
+          "ratio": 1.7777777777777777,
+          "k": "v"
+        },
+        {
+          "src": "/wo/freeform-26/0.webp",
+          "ratio": 0.75,
+          "k": "i"
+        },
+        {
+          "src": "/wo/overtone-26/0.webp",
+          "ratio": 0.7766990291262136,
+          "k": "i"
+        },
+        {
+          "src": "/wo/carlesfaus/0.webp",
+          "ratio": 0.7766990291262136,
+          "k": "i"
+        },
+        {
+          "src": "/wo/cristinagomez/0.webp",
+          "ratio": 0.7766990291262136,
+          "k": "i"
+        }
+      ],
+      "/about": [
+        {
+          "src": "/ab/th.webp",
+          "ratio": 0.8276041666666667,
+          "k": "i"
+        },
+        {
+          "src": "/ho/ho.webp",
+          "ratio": 0.8276041666666667,
+          "k": "i"
+        }
+      ],
+      "/work/obys": [
+        {
+          "src": "/wo/obys/1.webp",
+          "ratio": 1.7530434782608695,
+          "k": "i"
+        },
+        {
+          "src": "/wo/obys/2.webp",
+          "ratio": 0.631578947368421,
+          "k": "i"
+        },
+        {
+          "src": "/wo/obys/3.webp",
+          "ratio": 1.7530434782608695,
+          "k": "i"
+        },
+        {
+          "src": "/wo/obys/4.webp",
+          "ratio": 1.7530434782608695,
+          "k": "i"
+        },
+        {
+          "src": "/wo/obys/5.webp",
+          "ratio": 1.7530434782608695,
+          "k": "i"
+        }
+      ],
+      "/work/mariavasilyeva": [
+        {
+          "src": "/wo/maria-vasilyeva/1.webp",
+          "ratio": 1.7534246575342465,
+          "k": "i"
+        },
+        {
+          "src": "/wo/maria-vasilyeva/2.webp",
+          "ratio": 1.7534246575342465,
+          "k": "i"
+        },
+        {
+          "src": "/wo/maria-vasilyeva/3.webp",
+          "ratio": 1.7534246575342465,
+          "k": "i"
+        },
+        {
+          "src": "/wo/maria-vasilyeva/4.webp",
+          "ratio": 1.7534246575342465,
+          "k": "i"
+        },
+        {
+          "src": "/wo/maria-vasilyeva/5.webp",
+          "ratio": 1.7534246575342465,
+          "k": "i"
+        }
+      ],
+      "/work/alexandercooke": [
+        {
+          "src": "/wo/alex/1.webp",
+          "ratio": 1.7560975609756098,
+          "k": "i"
+        },
+        {
+          "src": "/wo/alex/2.webp",
+          "ratio": 1.754060324825986,
+          "k": "i"
+        },
+        {
+          "src": "/wo/alex/3.webp",
+          "ratio": 1.7560975609756098,
+          "k": "i"
+        },
+        {
+          "src": "/wo/alex/4.webp",
+          "ratio": 1.7560975609756098,
+          "k": "i"
+        },
+        {
+          "src": "/wo/alex/5.png",
+          "ratio": 1.2105684547638111,
+          "k": "i"
+        }
+      ],
+      "/work/yellowbelly": [
+        {
+          "src": "/wo/yellowbelly/1.webp",
+          "ratio": 1.7201365187713311,
+          "k": "i"
+        },
+        {
+          "src": "/wo/yellowbelly/2.webp",
+          "ratio": 1.7534246575342465,
+          "k": "i"
+        },
+        {
+          "src": "/wo/yellowbelly/3.webp",
+          "ratio": 1.7534246575342465,
+          "k": "i"
+        },
+        {
+          "src": "/wo/yellowbelly/4.webp",
+          "ratio": 1.7534246575342465,
+          "k": "i"
+        },
+        {
+          "src": "/wo/yellowbelly/5.webp",
+          "ratio": 1.7534246575342465,
+          "k": "i"
+        },
+        {
+          "src": "/wo/yellowbelly/6.webp",
+          "ratio": 1.7534246575342465,
+          "k": "i"
+        },
+        {
+          "src": "/wo/yellowbelly/7.webp",
+          "ratio": 1.7534246575342465,
+          "k": "i"
+        }
+      ],
+      "/work/champ": [
+        {
+          "src": "/wo/champ/1.webp",
+          "ratio": 1.7538167938931297,
+          "k": "i"
+        },
+        {
+          "src": "/wo/champ/2.webp",
+          "ratio": 1.1666666666666667,
+          "k": "i"
+        },
+        {
+          "src": "/wo/champ/3.webp",
+          "ratio": 1.7547528517110267,
+          "k": "i"
+        },
+        {
+          "src": "/wo/champ/4.webp",
+          "ratio": 1.7547528517110267,
+          "k": "i"
+        },
+        {
+          "src": "/wo/champ/5.webp",
+          "ratio": 1.0707656612529002,
+          "k": "i"
+        },
+        {
+          "src": "/wo/champ/6.webp",
+          "ratio": 1.7547528517110267,
+          "k": "i"
+        }
+      ],
+      "/work/sofa": [
+        {
+          "src": "/wo/sofa/1.webp",
+          "ratio": 1.7529411764705882,
+          "k": "i"
+        },
+        {
+          "src": "/wo/sofa/2.webp",
+          "ratio": 1.7529411764705882,
+          "k": "i"
+        },
+        {
+          "src": "/wo/sofa/3.webp",
+          "ratio": 1.3493771234428087,
+          "k": "i"
+        },
+        {
+          "src": "/wo/sofa/4.webp",
+          "ratio": 1.7529411764705882,
+          "k": "i"
+        },
+        {
+          "src": "/wo/sofa/5.webp",
+          "ratio": 1.7529411764705882,
+          "k": "i"
+        },
+        {
+          "src": "/wo/sofa/6.webp",
+          "ratio": 1.7529411764705882,
+          "k": "i"
+        },
+        {
+          "src": "/wo/sofa/7.webp",
+          "ratio": 1.7529411764705882,
+          "k": "i"
+        }
+      ],
+      "/work/ptf": [
+        {
+          "src": "/wo/ptf/1.webp",
+          "ratio": 0.8629213483146068,
+          "k": "i"
+        },
+        {
+          "src": "/wo/ptf/2.webp",
+          "ratio": 0.7622072250893211,
+          "k": "i"
+        },
+        {
+          "src": "/wo/ptf/3.webp",
+          "ratio": 0.7494145199063232,
+          "k": "i"
+        },
+        {
+          "src": "/wo/ptf/4.webp",
+          "ratio": 1.7843866171003717,
+          "k": "i"
+        },
+        {
+          "src": "/wo/ptf/5.webp",
+          "ratio": 0.410400390625,
+          "k": "i"
+        },
+        {
+          "src": "/wo/ptf/6.webp",
+          "ratio": 0.4618226600985222,
+          "k": "i"
+        },
+        {
+          "src": "/wo/ptf/7.webp",
+          "ratio": 1.5854665565648225,
+          "k": "i"
+        }
+      ],
+      "/work/massivegood": [
+        {
+          "src": "/wo/massivegood/1.webp",
+          "ratio": 1.7599396074484146,
+          "k": "i"
+        },
+        {
+          "src": "/wo/massivegood/2.webp",
+          "ratio": 1.7528822055137845,
+          "k": "i"
+        },
+        {
+          "src": "/wo/massivegood/3.webp",
+          "ratio": 1.8007172131147542,
+          "k": "i"
+        }
+      ],
+      "/work/zerotrillion": [
+        {
+          "src": "/wo/zerotrillion/1.webp",
+          "ratio": 1.7530434782608695,
+          "k": "i"
+        },
+        {
+          "src": "/wo/zerotrillion/2.webp",
+          "ratio": 1.05622009569378,
+          "k": "i"
+        },
+        {
+          "src": "/wo/zerotrillion/3.webp",
+          "ratio": 1.514271407110666,
+          "k": "i"
+        },
+        {
+          "src": "/wo/zerotrillion/4.webp",
+          "ratio": 1.7530434782608695,
+          "k": "i"
+        }
+      ],
+      "/work/mode-26": [
+        {
+          "src": "/wo/mode-26/1.webp",
+          "ratio": 1.7534246575342465,
+          "k": "i"
+        },
+        {
+          "src": "/wo/mode-26/2.webp",
+          "ratio": 1.0394431554524362,
+          "k": "i"
+        },
+        {
+          "src": "/wo/mode-26/3.webp",
+          "ratio": 0.46208530805687204,
+          "k": "i"
+        },
+        {
+          "src": "/wo/mode-26/4.webp",
+          "ratio": 0.46208530805687204,
+          "k": "i"
+        },
+        {
+          "src": "/wo/mode-26/5.webp",
+          "ratio": 1.7534246575342465,
+          "k": "i"
+        }
+      ],
+      "/work/freeform-26": [
+        {
+          "src": "/wo/freeform-26/1.webp",
+          "ratio": 1.7534246575342465,
+          "k": "i"
+        },
+        {
+          "src": "/wo/freeform-26/2.webp",
+          "ratio": 1.7534246575342465,
+          "k": "i"
+        },
+        {
+          "src": "/wo/freeform-26/3.webp",
+          "ratio": 1.7534246575342465,
+          "k": "i"
+        },
+        {
+          "src": "/wo/freeform-26/4.webp",
+          "ratio": 0.5124835742444153,
+          "k": "i"
+        },
+        {
+          "src": "/wo/freeform-26/5.webp",
+          "ratio": 0.5124835742444153,
+          "k": "i"
+        }
+      ],
+      "/work/overtone-26": [
+        {
+          "src": "/wo/overtone-26/1.webp",
+          "ratio": 1.7534246575342465,
+          "k": "i"
+        },
+        {
+          "src": "/wo/overtone-26/2.webp",
+          "ratio": 1.7534246575342465,
+          "k": "i"
+        },
+        {
+          "src": "/wo/overtone-26/3.webp",
+          "ratio": 1.7534246575342465,
+          "k": "i"
+        },
+        {
+          "src": "/wo/overtone-26/4.webp",
+          "ratio": 1.0522041763341068,
+          "k": "i"
+        },
+        {
+          "src": "/wo/overtone-26/5.webp",
+          "ratio": 0.580046403712297,
+          "k": "i"
+        },
+        {
+          "src": "/wo/overtone-26/6.webp",
+          "ratio": 0.5124835742444153,
+          "k": "i"
+        }
+      ],
+      "/work/carlesfaus": [
+        {
+          "src": "/wo/carlesfaus/1.webp",
+          "ratio": 1.5,
+          "k": "i"
+        },
+        {
+          "src": "/wo/carlesfaus/2.webp",
+          "ratio": 0.75,
+          "k": "i"
+        },
+        {
+          "src": "/wo/carlesfaus/3.webp",
+          "ratio": 0.75,
+          "k": "i"
+        },
+        {
+          "src": "/wo/carlesfaus/4.webp",
+          "ratio": 0.46208530805687204,
+          "k": "i"
+        },
+        {
+          "src": "/wo/carlesfaus/5.webp",
+          "ratio": 0.46208530805687204,
+          "k": "i"
+        },
+        {
+          "src": "/wo/carlesfaus/6.webp",
+          "ratio": 1.7534246575342465,
+          "k": "i"
+        },
+        {
+          "src": "/wo/carlesfaus/7.webp",
+          "ratio": 1.7534246575342465,
+          "k": "i"
+        }
+      ],
+      "/work/cristinagomez": [
+        {
+          "src": "/wo/cristinagomez/1.webp",
+          "ratio": 1.4849187935034802,
+          "k": "i"
+        },
+        {
+          "src": "/wo/cristinagomez/2.webp",
+          "ratio": 1.4849187935034802,
+          "k": "i"
+        },
+        {
+          "src": "/wo/cristinagomez/3.webp",
+          "ratio": 1.4849187935034802,
+          "k": "i"
+        },
+        {
+          "src": "/wo/cristinagomez/4.webp",
+          "ratio": 0.4619140625,
+          "k": "i"
+        },
+        {
+          "src": "/wo/cristinagomez/5.webp",
+          "ratio": 0.4619140625,
+          "k": "i"
+        },
+        {
+          "src": "/wo/cristinagomez/6.webp",
+          "ratio": 0.4619140625,
+          "k": "i"
+        },
+        {
+          "src": "/wo/cristinagomez/7.webp",
+          "ratio": 0.4619140625,
+          "k": "i"
+        }
+      ]
+    }
+  }
+}

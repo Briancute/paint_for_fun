@@ -1,0 +1,2 @@
+#version 300 es
+precision highp float;uniform sampler2D scene;uniform vec3 placement;in vec2 vUv;out vec4 color;void main(){vec2 uv=(vUv-0.5)/placement.x+0.5-placement.yz;color=vec4(texture(scene,clamp(uv,0.0,1.0)).rgb,1.0);}

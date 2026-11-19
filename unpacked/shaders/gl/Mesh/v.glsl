@@ -1,0 +1,2 @@
+#version 300 es
+precision highp float;in vec3 pos;in vec3 nrm;uniform mat4 proj;uniform mat4 view;uniform mat4 model;uniform vec2 ext;out vec3 vN;out vec3 vV;out vec2 vP;void main(){vec4 c=view*model*vec4(0.,0.,0.,1.);vec3 p=(view*model*vec4(pos,1.)).xyz-c.xyz;vec3 a=p+vec3(0.,0.,c.z);vN=mat3(view*model)*nrm;vV=-a;vP=pos.xy/ext;vec4 pa=proj*vec4(a,1.);vec4 pc=proj*c;vec4 origin=proj*vec4(0.,0.,c.z,1.);gl_Position=vec4(pa.xy+(pc.xy/pc.w-origin.xy/origin.w)*pa.w,pa.zw);}
