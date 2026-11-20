@@ -1629,22 +1629,32 @@ class Ue {
   tx=0;
   ty=0;
   tOn=!1;
+  tv=0;
+  tAxe="y";
+  tRaf=0;
   axe="";
   axeTm;
   stopped=!1;
   constructor() {
     n(Eh,5,this);
-    e(document,"a","wheel",this.fn),e(document,"a","keydown",this.fn),e(document,"a","touchstart",this.ts, {
+    e(document,"a","wheel",this.fn),e(document,"a","keydown",this.fn);
+    if(!hi)e(document,"a","touchstart",this.ts, {
       passive:!0
     }),e(document,"a","touchmove",this.tm, {
       passive:!1
-    }),this.axeTm=new Er( {
+    }),e(document,"a","touchend",this.te, {
+      passive:!0
+    }),e(document,"a","touchcancel",this.te, {
+      passive:!0
+    });
+    this.axeTm=new Er( {
       de:100,cb:()=> {
         this.axe=""
       }
     })
   }
   ts=(k)=> {
+    if(this.tRaf)cancelAnimationFrame(this.tRaf),this.tRaf=0,this.tv=0;
     if(k.touches.length!==1)return;
     this.tx=k.touches[0].clientX,this.ty=k.touches[0].clientY,this.tOn=!0
   };
@@ -1655,7 +1665,19 @@ class Ue {
     let L=k.touches[0].clientX,F=k.touches[0].clientY,I=this.tx-L,C=this.ty-F;
     if(this.tx=L,this.ty=F,Math.abs(I)<0.5&&Math.abs(C)<0.5)return;
     if(k.cancelable)k.preventDefault();
-    this.e=k,this.eT="touchmove",this.x=I,this.y=C,this.axe=Math.abs(I)>Math.abs(C)?"x":"y",this.axeTm.run(),this.cb("w")
+    let H=Math.abs(I)>Math.abs(C)?"x":"y",B=H==="x"?I:C;
+    this.tAxe=H,this.tv=this.tv*0.4+B*1.15,this.e=k,this.eT="touchmove",this.x=I,this.y=C,this.axe=H,this.axeTm.run(),this.cb("w")
+  };
+  te=()=> {
+    if(!this.tOn)return;
+    if(this.tOn=!1,Math.abs(this.tv)<1||this.stopped)return void(this.tv=0);
+    let k=()=> {
+      if(!this.tOn&&!this.stopped&&Math.abs(this.tv)>=0.4) {
+        this.x=this.tAxe==="x"?this.tv:0,this.y=this.tAxe==="y"?this.tv:0,this.axe=this.tAxe,this.cb("w"),this.tv*=0.92,this.tRaf=requestAnimationFrame(k)
+      }
+      else this.tRaf=0,this.tv=0
+    };
+    this.tRaf=requestAnimationFrame(k)
   };
   a(k) {
     this._.push(k),this.len++
@@ -1668,6 +1690,7 @@ class Ue {
     }
   }
   fn(k) {
+    if(this.tRaf)cancelAnimationFrame(this.tRaf),this.tRaf=0,this.tv=0;
     this.e=k,this.eT=k.type;
     let P=Mh(k.target);
     if(this.eT==="keydown") {
@@ -2286,7 +2309,7 @@ class mi {
     k.enable(k.BLEND),k.blendFuncSeparate(k.SRC_ALPHA,k.ONE_MINUS_SRC_ALPHA,k.ONE,k.ONE_MINUS_SRC_ALPHA)
   }
   rz() {
-    let k=__.win,P=this.gl,L=k.w<600?3:__.vs&&k.w>1920?1.5:2;
+    let k=__.win,P=this.gl,L=k.w<=1024?1.75:__.vs&&k.w>1920?1.5:2;
     this.dpr=Math.min(devicePixelRatio,L),this.pad=0;
     let F=k.h,I=k.w*this.dpr,C=F*this.dpr;
     P.canvas.width=I,P.canvas.height=C;
@@ -2751,7 +2774,7 @@ preloadList(k) {
     let L=new Set(this._.filter((F)=>F.el.isConnected&&this.inView(rt(F.el))).map((F)=>F.src));
     return P.filter((F)=>L.has(F.src))
   }
-  return P
+  return this.nativeHome(k)?P.slice(0,1):P
 }
 preloadRt(k,P) {
   if(__.rts?.[k]==="pr"&&this.rt===k)return this.preload(P);
@@ -5323,7 +5346,7 @@ class Ir {
     this.targets=null,this.presented=null
   }
   accepts(k) {
-    return!this.retained&&this.enabled&&!this.reduced.matches&&__.iD
+    return!this.retained&&this.enabled&&k.pointerType!=="touch"&&!this.reduced.matches&&__.iD
   }
   popupRoute() {
     let k=__;
@@ -5883,7 +5906,7 @@ class dt {
     let k=this.rgl;
     if(this.focus&&!this.focus.matches(this.tex))this.focus.dispose(),this.focus=null;
     let P=this.soft>0&&this.tex instanceof ht;
-    if(P&&this.tex instanceof ht)this.focus??=new en(k,this.tex,__.vs?4096:2048),this.focus.prepare(this.soft,this.softG);
+    if(P&&this.tex instanceof ht)this.focus??=new en(k,this.tex,__.vs&&__.win.w>1024?4096:2048),this.focus.prepare(this.soft,this.softG);
     let F=k.pgms.image.u,I=this.surfaceInk??k.ink;
     (this.inkBend>0&&(I?.active||this.bulge!==0||this.grain>0||this.soft>0)?k.inkQuad:k.quad).draw(()=> {
       let B=ee(this.m4);if(this.tv[0]=this.x+this.entryX,this.tv[1]=-(this.vy+this.entryY),this.tv[2]=0,he(B,this.tv),this.rotate!==0)Rr(B,this.rotate,[1,0,0]);this.tv[0]=this.w,this.tv[1]=this.h,this.tv[2]=1,ke(B,this.tv);let O=this.tex.ratio/(this.w/this.h),G=1;if(O<1)G=1/O,O=1;this.cv[0]=O*this.scale,this.cv[1]=G*this.scale,this.pv[0]=this.prlxX,this.pv[1]=this.prlxY+this.trimBottom*0.5,this.mx[0]=this.maskLR,this.mx[1]=this.maskRL,this.my[0]=this.maskTB,this.my[1]=this.maskBT,this.sphere[0]=this.w,this.sphere[1]=this.bulge,F.model.v=B,F.z.v=-50*this.z,F.sphere.v=this.sphere;let N=__.win,U=this.surfaceInk&&!this.surfaceInk.imageResponse?Math.min(1,Math.min(this.w,this.h)/Math.min(N.w,N.h)):1;this.bend[0]=this.inkBend*U,this.bend[1]=this.surfaceInk||this.inkLocal?1:0,F.inkBend.v=this.bend,F.inkReveal.v=this.inkReveal,F.cover.v=this.cv,F.prlx.v=this.pv,F.o.v=this.opacity,F.bw.v=this.bw,F.lumi.v=this.lumi,F.maskX.v=this.mx,F.maskY.v=this.my,F.gn.v=this.grain,F.gnWhite.v=this.grainWhite,F.gnCells.v=this.grainCells,F.gnS.v=this.grainPx>0&&this.h>0?this.grainPx/(Tu*this.h):1,F.ar.v=this.w/this.h,F.texA.v=this.texA,F.difference.v=this.difference?1:0;let D=this.markMorph,z=D!==null&&D.build<1;if(this.markProgress[0]=D?.origin==="pigment"?2:D!==null?1:0,this.markProgress[1]=z?D.fill:1,this.markProgress[2]=z?D.build:1,F.markProgress.v=this.markProgress,F.markColor.v=D?.color??this.markColor,F.markTex.v=z?2:0,z)D.distance.bind(2);F.soft.v=P?0:this.soft,F.softG.v=this.softG,this.inkSize[0]=Math.max(this.w,1),this.inkSize[1]=Math.max(this.h,1);let W=48;this.inkPad[0]=W/this.inkSize[0],this.inkPad[1]=W/this.inkSize[1],this.inkViewport[0]=__.win.w,this.inkViewport[1]=__.win.h,F.inkSize.v=this.inkSize,F.inkPad.v=this.inkPad,F.inkViewport.v=this.inkViewport;let V=I?.bounds??[0,0,...this.inkViewport];if(V[1]+=k.viewportOffsetY??0,F.inkFrame.v=V,F.inkActive.v=this.pointerReactive&&I?.active?1:0,F.inkAura.v=this.inkAura&&I?.auraActive?1:0,F.inkScroll.v=I?.field.scroll??0,I)I.bind();else this.tex.bind(1);if(P)this.focus.bind(0);else this.tex.bind(0)
@@ -7542,7 +7565,7 @@ class Wi {
   }
   enter=(k)=> {
     if(this.blocked())return;
-    this.track(k);
+    if(this.track(k),k.pointerType==="touch")return;
     let P=k.currentTarget;
     this.hover=this.w.rows.includes(P)?P:null,this.sync()
   };
@@ -7552,6 +7575,10 @@ class Wi {
   };
   track=(k)=> {
     let P=k;
+    if(P.pointerType==="touch") {
+      if(this.px=this.py=-1,this.hover=null,!this.blocked())this.hide();
+      return
+    }
     if(!Number.isFinite(P.clientX)||!Number.isFinite(P.clientY))return;
     this.px=P.clientX,this.py=P.clientY
   };
@@ -7600,8 +7627,8 @@ class Wi {
 scrollHover() {
   let k=this.w.h.sc();
   if(Number.isFinite(this.psc)&&Math.abs(k-this.psc)<=0.05)return;
-  this.psc=k;
-  let L=document.elementFromPoint(this.px>=0?this.px:__.win.w*0.5,this.py>=0?this.py:__.win.h*0.5)?.closest?.(".ho-wo-r");
+  if(this.psc=k,this.px<0)return;
+  let L=document.elementFromPoint(this.px,this.py)?.closest?.(".ho-wo-r");
   if(this.hover=L&&this.w.rows.includes(L)?L:null,!this.hover)this.hide()
 }
 srcAt(k) {
@@ -7808,7 +7835,7 @@ class ji {
   rt;
   constructor(k) {
     this.h=k;
-    this.pt=new Vi(this),this.ar=new Ni(this),this.bd=new Di(this),this.cv=new Wi(this,this.ar),this.rt=new Yi(this,this.bd,this.cv,this.ar,this.pt)
+    this.pt=new Vi(this),this.ar=__.vs?new Ni(this):null,this.bd=new Di(this),this.cv=this.ar?new Wi(this,this.ar):null,this.rt=new Yi(this,this.bd,this.cv,this.ar,this.pt)
   }
   init(k,P,L=[]) {
     if(this.el=t.i("ho-wo"),this.anchor=this.cv?t.i("ho-wo-im"):null,this.rows=t.c("ho-wo-r",k),this.text=P,this.foot=L,!__.vs)for(let F of P)F.asLive(()=>this.mrf);
@@ -8187,7 +8214,7 @@ class $i extends hr {
     let L=t.i("ho-wo");
     if(this.portraitInk=this.attachInk(()=> {
       let W=this.plane0?.inkSurface();if(!W)return null;let V=L?rt(L).top:k.win.h;return W.clip.h=Math.max(0,Math.min(W.clip.y+W.clip.h,V)-W.clip.y),W
-    },"image"),this.addPlanes(),!0)this.rgl.media.preloadRt(this.url);
+    },"image"),this.addPlanes(),k.vs)this.rgl.media.preloadRt(this.url);
     let F=this.addTexts(t.i("ho-fo-bg"),!0,!0),I=this.addTexts(t.i("ho-fo-me"),!0),C=this.fo.init(P,I);
     if(C)this.add(C);
     let H=t.i("ho-fo");
@@ -8223,7 +8250,7 @@ class $i extends hr {
     if(k.was.pr&&z.startsWith("/work/"))this.wo.acc(z)
   }
   attachInk(k,P="page") {
-    if(!this.rgl.ink)return null;
+    if(!__.vs||!this.rgl.ink)return null;
     let L=this.rgl.ink.attachSurface(k,P);
     return this.surfaceInks.push(L),L
   }

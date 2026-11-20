@@ -686,7 +686,7 @@ body:not(.vs) #ho-he-1-panel:has([data-native-text]) {
     --portrait-width:clamp(5.6rem,17vw,9.6rem);
     gap:.5rem;
     max-inline-size:62rem;
-    font-size:clamp(12px,3.35vw,20px);
+    font-size:clamp(10px,2.95vw,18px);
     line-height:1.04
   }
   #ho-he-0-fo-lgw {
@@ -1504,7 +1504,7 @@ html.ab-gl #ab-im:after {
     gap:0 .4rem;
     inline-size:calc(100% + 1.2rem);
     margin-block-start:.5rem;
-    font-size:clamp(11px,3.05vw,20px);
+    font-size:clamp(10px,2.85vw,18px);
     line-height:1.04
   }
   #ab-st-im {
@@ -2072,6 +2072,27 @@ html.ab-gl #ab-im:after {
 }
 .enhanced [data-gl-text]:is(:focus-visible,:has(:focus-visible)) {
   opacity:1
+}
+@media (min-width:769px) and (max-width:1024px) {
+  #ho-he-0-me {
+    grid-template-columns:calc(var(--col)*5 + var(--g)*4) 1fr auto
+  }
+  #ho-he-1-co {
+    margin-left:calc(var(--col)*2 + var(--g)*2);
+    grid-template-columns:minmax(0,1fr) auto auto
+  }
+  #ho-wo {
+    --ho-wo-display:19.5vw
+  }
+  #ho-wo-im {
+    block-size:32.96rem;
+    inline-size:25.6rem;
+    left:calc(50% - 12.8rem)!important
+  }
+  #ab-co {
+    inline-size:calc(var(--col)*8 + var(--g)*7)
+  }
+
 }
 html:not(.enhanced) :where(body,#m) {
   pointer-events:auto
