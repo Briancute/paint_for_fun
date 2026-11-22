@@ -6387,6 +6387,8 @@ function Ya(k) {
 }
 class lr {
   v=!1;
+  _rw=0;
+  _rh=0;
   layoutVersion=0;
   txt=!0;
   rt;
@@ -6485,11 +6487,11 @@ class lr {
         x:C,y:H
       }
       =bt(this.el);
-      this.x=C,this.y=H,this.w=this.el.offsetWidth,this.h=this.el.offsetHeight,this.lineHeight=I.lineHeight,this.entryDelay=I.entryDelay,this.lineInkBottom=I.lineHeight,this.rgl.dirt=!0,this.draw();
+      this.x=C,this.y=H,this.w=this.el.offsetWidth,this.h=this.el.offsetHeight,this.lineHeight=I.lineHeight,this.entryDelay=I.entryDelay,this.lineInkBottom=I.lineHeight,this._rw=__.win.w,this._rh=__.win.h,this.rgl.dirt=!0,this.draw();
       return
     }
     if(!this.font)return;
-    if(this.lineReveal&&!this.sl&&!t.c("y",this.el).length) {
+    if(!this.sl&&!t.c("y",this.el).length) {
       let I=getComputedStyle(this.el),C=parseFloat(I.lineHeight)||parseFloat(I.fontSize)*1.2;
       if(this.el.offsetHeight>C*1.5)this.sl=new ar( {
         dom:this.el
@@ -6508,9 +6510,10 @@ class lr {
     let F=za( {
       el:this.el,font:this.font,x:this.x,w:this.w,h:this.h,dir:this.dir,rip:this.ripped,band:this.bg!==null,lineReveal:this.lineReveal,lineStagger:this.lineStagger,underlines:this.underlines
     });
-    this.nl=F.nl,this.spreadL=F.spreadL,this.inkTop=F.inkTop,this.inkBottom=F.inkBottom,this.entryDelay=F.entryDelay,this.lineHeight=F.lineHeight,this.lineTop=F.lineTop,this.lineInkTop=F.lineInkTop,this.lineInkBottom=F.lineInkBottom,this.mesh.upload(F),this.layoutVersion++
+    this.nl=F.nl,this.spreadL=F.spreadL,this.inkTop=F.inkTop,this.inkBottom=F.inkBottom,this.entryDelay=F.entryDelay,this.lineHeight=F.lineHeight,this.lineTop=F.lineTop,this.lineInkTop=F.lineInkTop,this.lineInkBottom=F.lineInkBottom,this.mesh.upload(F),this.layoutVersion++,this._rw=__.win.w,this._rh=__.win.h
   }
   upd(k) {
+    if((this.font||this.native)&&(this._rw!==__.win.w||this._rh!==__.win.h))this.rz();
     let P=this.rgl,L=__.win,F=P.viewportOffsetY??0;
     if(this.live&&this.liveWhen&&!this.liveWhen()) {
       let N=this.rt!==void 0?P.s.of(this.rt):P.sc;
@@ -6841,6 +6844,8 @@ class Ye {
   });
   scroll=0;
   infoFrame=null;
+  _rw=0;
+  _rh=0;
   constructor(k) {
     this.h=k
   }
@@ -6870,9 +6875,10 @@ class Ye {
       }
     }
     let F=__.win,I=t.i("ho-he-1");
-    this.pinAt=Math.max(k-F.h,1),this.end=tt(I?bt(I).y:this.pinAt,1,this.pinAt),this.scroll=this.h.sc(),this.cloth.set(0),this.grow()
+    this.pinAt=Math.max(k-F.h,1),this.end=tt(I?bt(I).y:this.pinAt,1,this.pinAt),this.scroll=this.h.sc(),this.cloth.set(0),this._rw=F.w,this._rh=F.h,this.grow()
   }
   tick() {
+    if(this._rw!==__.win.w||this._rh!==__.win.h)this.h.rz();
     this.grow()
   }
   grow() {
@@ -9009,8 +9015,10 @@ class Le {
     this.s.init()
   }
   rz() {
-    for(let k of this._v)k.rz?.();
-    this.s.rz()
+    __.win.upd(innerWidth,innerHeight);
+    this.rgl.rz();
+    this.s.rz();
+    for(let k of this._v)k.rz?.()
   }
   on() {
     this.s.on();
@@ -9024,6 +9032,7 @@ class Le {
     for(let k of this._v)k.settle?.()
   }
   tick() {
+    if(innerWidth!==__.win.w||innerHeight!==__.win.h)this.rz();
     this.s.tick();
     for(let k of this._v)k.tick?.();
     this.rgl.loop()
@@ -9591,7 +9600,7 @@ class ns {
     P.vertexArray.bind(null)
   }
 }
-var gn=Math.PI,mp=-Math.PI;
+var gn=-0.35,mp=0.7;
 function bn(k,P,L=16) {
   let F=k.value-k.target,I=k.velocity+L*F,C=Math.exp(-L*P);
   if(k.value=k.target+(F+I*P)*C,k.velocity=(k.velocity-L*I*P)*C,Math.abs(k.value-k.target)<0.00001&&Math.abs(k.velocity)<0.0001)k.value=k.target,k.velocity=0

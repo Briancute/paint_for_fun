@@ -2084,6 +2084,10 @@ html.ab-gl #ab-im:after {
   #ho-wo {
     --ho-wo-display:19.5vw
   }
+  .ho-wo-mt {
+    grid-template-columns:calc(var(--col)*4 + var(--g)*3) calc(var(--col)*3 + var(--g)*2) calc(var(--col)*4 + var(--g)*3) var(--col);
+    line-height:1.2
+  }
   #ho-wo-im {
     block-size:32.96rem;
     inline-size:25.6rem;
